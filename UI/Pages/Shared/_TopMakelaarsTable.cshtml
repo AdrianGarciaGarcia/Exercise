@@ -1,0 +1,23 @@
+﻿@using UI.Infrastructure.Models;
+@model List<TopMakelaar>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Total Houses</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var makelaar in Model)
+        {
+            <tr>
+                <td>@makelaar.Position</td>
+                <td>@makelaar.Name</td>
+                <td>@makelaar.TotalHouses</td>
+            </tr>
+        }
+    </tbody>
+</table>

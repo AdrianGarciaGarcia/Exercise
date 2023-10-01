@@ -1,0 +1,19 @@
+﻿@page
+@using UI.Infrastructure.Models;
+@model IndexModel
+
+<div class="row">
+    <div class="col-md-6 text-center">
+        <h3>Top real estate agent</h3>
+        <div>
+            @await Html.PartialAsync("_TopMakelaarsTable", Model.TableTopMakelaars.Makelaars)
+        </div>
+    </div>
+
+    <div class="col-md-6 text-center">
+        <h3>Top real estate agent with houses with a garden</h3>
+        <div>
+            @await Html.PartialAsync("_TopMakelaarsTable", Model.TableTopMakelaarsHousesWithGarden.Makelaars)
+        </div>
+    </div>
+</div>

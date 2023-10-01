@@ -1,0 +1,7 @@
+﻿/.vs
+/Api/bin/Debug/net7.0
+/Api/obj
+/Api.Test/bin/Debug/net7.0
+/Api.Test/obj
+/UI/bin/Debug/net7.0
+/UI/obj
