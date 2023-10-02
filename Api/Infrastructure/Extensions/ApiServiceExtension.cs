@@ -8,17 +8,14 @@ namespace Api.Infrastructure.Extensions
     {
         public static IServiceCollection AddConfiguredApiService(this IServiceCollection services, IConfiguration configuration)
         {
-            var apiBaseUrl = configuration["FundaApiUrl"];
+            var apiBaseUrl = configuration["FundaApi:Url"];
             if (string.IsNullOrEmpty(apiBaseUrl))
             {
                 throw new ConfigurationException("FundaApiUrl is not defined in appsettings.");
             }
 
-            services.AddScoped<IApiService, FundaApiService>();
-            services.AddHttpClient<FundaApiService>(c =>
-            {
-                c.BaseAddress = new Uri(apiBaseUrl);
-            });
+            services.AddSingleton<IApiService, FundaApiService>();
+            services.AddHttpClient<FundaApiService>();
 
             return services;
         }
